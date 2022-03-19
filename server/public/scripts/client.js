@@ -29,3 +29,43 @@ function getTasks(){
     })
 
 } // end getTasks function
+
+function renderTasks(tasks){
+    console.log('in renderTasks');
+    $('#viewTasks').empty();
+
+    for(let i = 0; i < tasks.length; i++) {
+        let task = tasks[i];
+        
+        
+        // if (koala.ready_to_transfer === true) {
+        //   $('#viewKoalas').append(`
+        //   <tr data-id=${koala.id}>
+        //     <td>${koala.name}</td>
+        //     <td>${koala.gender}</td>
+        //     <td>${koala.age}</td>
+        //     <td class="green">${koala.ready_to_transfer}</td>
+        //     <td>${koala.notes}</td>
+        //     <td>
+        //       <button class="deleteBtn">DELETE Koala</button>
+        //     </td>
+        //   </tr>
+        // `);
+        // } 
+        // else {
+        $('#viewKoalas').append(`
+          <tr data-id=${task.id}>
+            <td>${task.task}</td>
+            <td>${task.description}</td>
+            <td class="incomplete">${task.status}</td>
+            <td>
+              <button class="deleteBtn">DELETE TASK</button>
+              <button class="markCompletedBtn">COMPLETED</button>
+            </td>
+          </tr>
+        `);
+        }
+      }
+//     }
+    
+// }
