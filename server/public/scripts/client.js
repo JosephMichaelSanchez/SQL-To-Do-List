@@ -15,3 +15,17 @@ $('body').on('click', '.deleteBtn', deleteTask);
 getTasks();
 
 }); // end doc ready
+
+function getTasks(){
+    console.log('in getTasks');
+// AJAX request to get tasks    
+    $.ajax({
+    method: 'GET',
+    url: '/tasks'
+    }).then(function(tasks) {
+    renderTasks(tasks);
+    }).catch(function (err) {
+    console.log(err);
+    })
+
+} // end getTasks function
