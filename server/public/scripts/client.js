@@ -69,3 +69,29 @@ function renderTasks(tasks){
 //     }
     
 // }
+
+function addTask(){
+    console.log('in addTask');
+let task = $('#taskIn').val();
+let description = $('#descriptionIn').val();
+let status = 'Incomplete'
+
+let taskToSend = {
+    task: task,
+    description: description,
+    status: status
+}
+    console.log(taskToSend);
+    
+    $.ajax({
+    url: '/tasks',
+    method: 'POST',
+    data: taskToSend
+    }).then(function(response) {
+    console.log(response);
+    getTasks(response);
+    }).catch(function(error) {
+    console.log('error in POST:', error);
+    alert('ERROR ADDING TASK!')    
+    })
+}
