@@ -95,3 +95,20 @@ let taskToSend = {
     alert('ERROR ADDING TASK!')    
     })
 }
+
+function transferStatus() {
+    console.log('Completed button clicked');
+    let taskId = $(this).closest('tr').data('id')
+    
+    console.log('clicked Completed',taskId);
+    $.ajax({
+      url: `/tasks/${taskId}`,
+      method: 'PUT',
+    
+    }).then(function (response) {
+      console.log('has been completed!');
+      getTasks();
+    }).catch(function (err) {
+      console.log(err)
+    })
+  }
