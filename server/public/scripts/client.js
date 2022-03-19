@@ -53,7 +53,7 @@ function renderTasks(tasks){
         // `);
         // } 
         // else {
-        $('#viewKoalas').append(`
+        $('#viewTasks').append(`
           <tr data-id=${task.id}>
             <td>${task.task}</td>
             <td>${task.description}</td>
