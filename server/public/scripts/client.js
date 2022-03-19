@@ -7,7 +7,7 @@ $( document ).ready( function(){
 $('#addTaskBtn').on('click', addTask);
 
 // click listener for the MARK COMPLETED buttons, will call markCompleted function
-$('body').on('click', '.markCompletedBtn', markCompleted);
+$('body').on('click', '.markCompleteBtn', markCompleted);
 
 // click-listener for the DELETE buttons
 $('body').on('click', '.deleteBtn', deleteTask);
@@ -60,7 +60,7 @@ function renderTasks(tasks){
             <td class="incomplete">${task.status}</td>
             <td>
               <button class="deleteBtn">DELETE TASK</button>
-              <button class="markCompletedBtn">COMPLETED</button>
+              <button class="markCompleteBtn">COMPLETED</button>
             </td>
           </tr>
         `);
@@ -97,16 +97,16 @@ let taskToSend = {
 }
 
 function changeStatus() {
-    console.log('Completed button clicked');
+    console.log('Complete button clicked');
     let taskId = $(this).closest('tr').data('id')
     
-    console.log('clicked Completed',taskId);
+    console.log('clicked Complete',taskId);
     $.ajax({
       url: `/tasks/${taskId}`,
       method: 'PUT',
     
     }).then(function (response) {
-      console.log('has been completed!');
+      console.log('is complete!');
       getTasks();
     }).catch(function (err) {
       console.log(err)

@@ -35,6 +35,14 @@ taskRouter.post('/', (req, res) => {
     //     alert('Please say yes or no for ready to transfer <3')
     //   }
 
+    if(newTask.status.toLowerCase() === 'complete'){
+        newTask.status = true;
+    } else if(newTask.status.toLowerCase() === 'incomplete') {
+        newTask.status = false;
+    } else {
+        alert('Tasks must be marked either incomplete or complete')
+    }
+
     let queryText = `
     INSERT INTO "tasks"
     ("task", "description", "status")
