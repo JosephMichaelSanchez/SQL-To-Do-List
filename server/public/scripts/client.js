@@ -96,7 +96,7 @@ let taskToSend = {
     })
 }
 
-function transferStatus() {
+function changeStatus() {
     console.log('Completed button clicked');
     let taskId = $(this).closest('tr').data('id')
     
