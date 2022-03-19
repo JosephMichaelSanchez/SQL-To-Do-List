@@ -77,13 +77,16 @@ let task = $('#taskIn').val();
 let description = $('#descriptionIn').val();
 let status = 'Incomplete'
 
+
+
 let taskToSend = {
     task: task,
     description: description,
     status: status
 }
     console.log(taskToSend);
-    
+    $('#taskIn').val('');
+    $('#descriptionIn').val('');
     $.ajax({
     url: '/tasks',
     method: 'POST',
@@ -95,6 +98,8 @@ let taskToSend = {
     console.log('error in POST:', error);
     alert('ERROR ADDING TASK!')    
     })
+  
+  
 }
 
 function changeStatus() {

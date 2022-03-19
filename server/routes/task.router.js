@@ -9,6 +9,7 @@ taskRouter.get('/', (req, res) => {
     console.log('in GET');
     let queryText = `
         SELECT * FROM "tasks"
+        ORDER BY "id" ASC
     `;
 
     pool.query(queryText).then(tasks => {
