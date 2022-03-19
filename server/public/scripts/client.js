@@ -45,7 +45,7 @@ function renderTasks(tasks){
             <td>${task.description}</td>
             <td>COMPLETE</td>
             <td>
-              <button class="deleteBtn">DELETE Koala</button>
+              <button class="deleteBtn">Delete Task</button>
             </td>
           </tr>
         `);
@@ -57,8 +57,8 @@ function renderTasks(tasks){
             <td>${task.description}</td>
             <td>INCOMPLETE</td>
             <td>
-              <button class="deleteBtn">DELETE TASK</button>
-              <button class="markCompleteBtn">COMPLETED</button>
+              <button class="deleteBtn">Delete Task</button>
+              <button class="markCompleteBtn">Mark Complete</button>
             </td>
           </tr>
         `);

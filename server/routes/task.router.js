@@ -25,16 +25,6 @@ taskRouter.post('/', (req, res) => {
     let newTask = req.body
     console.log('Adding', newTask);
 
-
-    // convert readyForTransfer to ready_to_transfer
-    //  if(newKoala.ready_to_transfer.toLowerCase() === 'yes') {
-    //     newKoala.ready_to_transfer = true;
-    //   } else if(newKoala.ready_to_transfer.toLowerCase() === 'no') {
-    //     newKoala.ready_to_transfer = false;
-    //   } else {
-    //     alert('Please say yes or no for ready to transfer <3')
-    //   }
-
     if(newTask.status.toLowerCase() === 'complete'){
         newTask.status = true;
     } else if(newTask.status.toLowerCase() === 'incomplete') {
