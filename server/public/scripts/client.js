@@ -43,7 +43,7 @@ function renderTasks(tasks){
           <tr data-id=${task.id}>
             <td>${task.task}</td>
             <td>${task.description}</td>
-            <td class="green">COMPLETE</td>
+            <td class="complete">COMPLETE</td>
             <td>
               <button class="deleteBtn">DELETE Koala</button>
             </td>
