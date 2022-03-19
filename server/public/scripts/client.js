@@ -47,6 +47,8 @@ function renderTasks(tasks){
             <td>
               <button class="deleteBtn">Delete Task</button>
             </td>
+            <td>
+            </td>
           </tr>
         `);
         } 
@@ -58,6 +60,8 @@ function renderTasks(tasks){
             <td>INCOMPLETE</td>
             <td>
               <button class="deleteBtn">Delete Task</button>
+            </td>  
+            <td>
               <button class="markCompleteBtn">Mark Complete</button>
             </td>
           </tr>
