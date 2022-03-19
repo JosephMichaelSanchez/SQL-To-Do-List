@@ -7,7 +7,7 @@ $( document ).ready( function(){
 $('#addTaskBtn').on('click', addTask);
 
 // click listener for the MARK COMPLETED buttons, will call markCompleted function
-$('body').on('click', '.markCompleteBtn', markCompleted);
+$('body').on('click', '.markCompleteBtn', changeStatus);
 
 // click-listener for the DELETE buttons
 $('body').on('click', '.deleteBtn', deleteTask);
@@ -57,7 +57,7 @@ function renderTasks(tasks){
           <tr data-id=${task.id}>
             <td>${task.task}</td>
             <td>${task.description}</td>
-            <td class="incomplete">${task.status}</td>
+            <td class="incomplete">INCOMPLETE</td>
             <td>
               <button class="deleteBtn">DELETE TASK</button>
               <button class="markCompleteBtn">COMPLETED</button>
@@ -112,3 +112,21 @@ function changeStatus() {
       console.log(err)
     })
   }
+
+  function deleteTask( removedTask ){
+    console.log('in deleteTask', removedTask);
+    // target the ID of the task on the table row
+    let id = $(this).closest('tr').data('id');
+    console.log(id);
+  
+      $.ajax({
+        url: `/tasks/${id}`,
+        method: 'DELETE',
+      }).then(function (response) {
+        console.log('task deleted');
+        getTasks();
+      }).catch(function(err) {
+        console.log(err);
+      }) 
+    }
+  
