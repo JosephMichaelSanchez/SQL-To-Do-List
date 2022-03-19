@@ -40,10 +40,10 @@ function renderTasks(tasks){
         
         if (task.status === true) {
           $('#viewTasks').append(`
-          <tr data-id=${task.id}>
+          <tr class="complete" data-id=${task.id}>
             <td>${task.task}</td>
             <td>${task.description}</td>
-            <td class="complete">COMPLETE</td>
+            <td>COMPLETE</td>
             <td>
               <button class="deleteBtn">DELETE Koala</button>
             </td>
@@ -52,10 +52,10 @@ function renderTasks(tasks){
         } 
         else {
         $('#viewTasks').append(`
-          <tr data-id=${task.id}>
+          <tr class="incomplete" data-id=${task.id}>
             <td>${task.task}</td>
             <td>${task.description}</td>
-            <td class="incomplete">INCOMPLETE</td>
+            <td>INCOMPLETE</td>
             <td>
               <button class="deleteBtn">DELETE TASK</button>
               <button class="markCompleteBtn">COMPLETED</button>
