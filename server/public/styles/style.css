@@ -9,3 +9,7 @@
 .incomplete {
     background-color: tomato;
 }
+
+body {
+    padding: 5px 5px 5px 5px;
+}

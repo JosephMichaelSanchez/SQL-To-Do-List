@@ -45,7 +45,7 @@ function renderTasks(tasks){
             <td>${task.description}</td>
             <td>COMPLETE</td>
             <td>
-              <button class="deleteBtn">Delete Task</button>
+              <button class="deleteBtn btn btn-dark">Delete Task</button>
             </td>
             <td>
             </td>
@@ -59,10 +59,10 @@ function renderTasks(tasks){
             <td>${task.description}</td>
             <td>INCOMPLETE</td>
             <td>
-              <button class="deleteBtn">Delete Task</button>
+              <button class="deleteBtn btn btn-dark">Delete Task</button>
             </td>  
             <td>
-              <button class="markCompleteBtn">Mark Complete</button>
+              <button class="markCompleteBtn btn btn-success">Mark Complete</button>
             </td>
           </tr>
         `);
