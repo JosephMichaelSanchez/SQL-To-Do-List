@@ -3,11 +3,11 @@
 } */
 
 .complete {
-    background-color: greenyellow;
+    background-color: rgb(192, 238, 122);
 }
 
 .incomplete {
-    background-color: tomato;
+    background-color: rgb(240, 136, 118);
 }
 
 body {
@@ -28,5 +28,13 @@ h2 {
 
 .toDoHeader {
     text-align: center;
-    background-color: darkgrey;
+    background-color: rgb(236, 220, 130);
+}
+
+.tabHead {
+    text-align: center;
+}
+
+.tabData {
+    text-align: center;
 }

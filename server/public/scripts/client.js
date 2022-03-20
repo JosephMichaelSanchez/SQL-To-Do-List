@@ -41,13 +41,13 @@ function renderTasks(tasks){
         if (task.status === true) {
           $('#viewTasks').append(`
           <tr class="complete" data-id=${task.id}>
-            <td>${task.task}</td>
-            <td>${task.description}</td>
-            <td>COMPLETE</td>
-            <td>
+            <td class="tabData">${task.task}</td>
+            <td class="tabData">${task.description}</td>
+            <td class="tabData">COMPLETE</td>
+            <td class="tabData">
               <button class="deleteBtn btn btn-dark">Delete Task</button>
             </td>
-            <td>
+            <td class="tabData">
             </td>
           </tr>
         `);
@@ -55,13 +55,13 @@ function renderTasks(tasks){
         else {
         $('#viewTasks').append(`
           <tr class="incomplete" data-id=${task.id}>
-            <td>${task.task}</td>
-            <td>${task.description}</td>
-            <td>INCOMPLETE</td>
-            <td>
+            <td class="tabData">${task.task}</td>
+            <td class="tabData">${task.description}</td>
+            <td class="tabData">INCOMPLETE</td>
+            <td class="tabData">
               <button class="deleteBtn btn btn-dark">Delete Task</button>
             </td>  
-            <td>
+            <td class="tabData">
               <button class="markCompleteBtn btn btn-success">Mark Complete</button>
             </td>
           </tr>
