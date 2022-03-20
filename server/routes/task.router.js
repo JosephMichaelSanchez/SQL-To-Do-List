@@ -4,9 +4,10 @@ const taskRouter = express.Router();
 // DB CONNECTION
 const pool = require('../modules/pool.js')
 
-// GET
+// GET 
 taskRouter.get('/', (req, res) => {
     console.log('in GET');
+    // will place the tasks in the order they were created
     let queryText = `
         SELECT * FROM "tasks"
         ORDER BY "id" ASC
@@ -26,6 +27,7 @@ taskRouter.post('/', (req, res) => {
     let newTask = req.body
     console.log('Adding', newTask);
 
+    // conditional to convert complete/incomplete to true/false on the DB
     if(newTask.status.toLowerCase() === 'complete'){
         newTask.status = true;
     } else if(newTask.status.toLowerCase() === 'incomplete') {
@@ -34,6 +36,7 @@ taskRouter.post('/', (req, res) => {
         alert('Tasks must be marked either incomplete or complete')
     }
 
+    // sanitize the inputs to prevent SQL injection
     let queryText = `
     INSERT INTO "tasks"
     ("task", "description", "status")
@@ -57,6 +60,8 @@ taskRouter.post('/', (req, res) => {
 
 taskRouter.put('/:id', (req, res) => {
     console.log(req.params.id);
+
+    // data sanitization
     let queryText = `
     UPDATE "tasks"
     SET "status" = TRUE
@@ -79,6 +84,8 @@ taskRouter.put('/:id', (req, res) => {
 taskRouter.delete('/:id', (req, res) => {
     console.log('delete a task', req.params.id);
     let id = req.params.id;
+
+    // data sanitization 
     const queryText = `
     DELETE FROM "tasks"
     WHERE "id" = $1;
