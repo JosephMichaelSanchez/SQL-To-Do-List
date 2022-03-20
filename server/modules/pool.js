@@ -1,6 +1,5 @@
 const pg = require('pg');
 
-//do PG Setup...this should eventually be in a separate module
 const Pool = pg.Pool;
 const pool = new Pool({
     //config to talk to Postgres!
