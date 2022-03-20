@@ -1,11 +1,40 @@
-body {
+/* body {
     background-color: rgb(221, 214, 201);
-}
+} */
 
 .complete {
-    background-color: greenyellow;
+    background-color: rgb(192, 238, 122);
 }
 
 .incomplete {
-    background-color: tomato;
+    background-color: rgb(240, 136, 118);
+}
+
+body {
+    padding: 5px 5px 5px 5px;
+}
+
+h2 {
+    text-align: center;
+    background-color: rgb(9, 93, 114);
+    color: white;
+}
+
+.taskInput {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.toDoHeader {
+    text-align: center;
+    background-color: rgb(236, 220, 130);
+}
+
+.tabHead {
+    text-align: center;
+}
+
+.tabData {
+    text-align: center;
 }

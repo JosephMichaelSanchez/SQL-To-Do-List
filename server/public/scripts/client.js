@@ -41,11 +41,13 @@ function renderTasks(tasks){
         if (task.status === true) {
           $('#viewTasks').append(`
           <tr class="complete" data-id=${task.id}>
-            <td>${task.task}</td>
-            <td>${task.description}</td>
-            <td>COMPLETE</td>
-            <td>
-              <button class="deleteBtn">Delete Task</button>
+            <td class="tabData">${task.task}</td>
+            <td class="tabData">${task.description}</td>
+            <td class="tabData">COMPLETE</td>
+            <td class="tabData">
+              <button class="deleteBtn btn btn-dark">Delete Task</button>
+            </td>
+            <td class="tabData">
             </td>
           </tr>
         `);
@@ -53,12 +55,14 @@ function renderTasks(tasks){
         else {
         $('#viewTasks').append(`
           <tr class="incomplete" data-id=${task.id}>
-            <td>${task.task}</td>
-            <td>${task.description}</td>
-            <td>INCOMPLETE</td>
-            <td>
-              <button class="deleteBtn">Delete Task</button>
-              <button class="markCompleteBtn">Mark Complete</button>
+            <td class="tabData">${task.task}</td>
+            <td class="tabData">${task.description}</td>
+            <td class="tabData">INCOMPLETE</td>
+            <td class="tabData">
+              <button class="deleteBtn btn btn-dark">Delete Task</button>
+            </td>  
+            <td class="tabData">
+              <button class="markCompleteBtn btn btn-success">Mark Complete</button>
             </td>
           </tr>
         `);
@@ -73,13 +77,16 @@ let task = $('#taskIn').val();
 let description = $('#descriptionIn').val();
 let status = 'Incomplete'
 
+
+
 let taskToSend = {
     task: task,
     description: description,
     status: status
 }
     console.log(taskToSend);
-    
+    $('#taskIn').val('');
+    $('#descriptionIn').val('');
     $.ajax({
     url: '/tasks',
     method: 'POST',
@@ -91,6 +98,8 @@ let taskToSend = {
     console.log('error in POST:', error);
     alert('ERROR ADDING TASK!')    
     })
+  
+  
 }
 
 function changeStatus() {
