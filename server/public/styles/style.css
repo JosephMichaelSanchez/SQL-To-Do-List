@@ -13,3 +13,20 @@
 body {
     padding: 5px 5px 5px 5px;
 }
+
+h2 {
+    text-align: center;
+    background-color: rgb(9, 93, 114);
+    color: white;
+}
+
+.taskInput {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.toDoHeader {
+    text-align: center;
+    background-color: darkgrey;
+}
